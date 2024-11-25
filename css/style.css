@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+/* Reset general */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex; /* Habilita Flexbox */
+    flex-direction: column; /* Alinea logo y contenido de forma vertical */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+}
+
+/* Fondo del video */
+.container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 20px; /* Distancia desde la parte superior */
+    width: 100%; /* El logo ocupará el 100% de ancho disponible */
+    display: flex;
+    justify-content: center; /* Centra el logo */
+    z-index: 1;
+}
+
+.logo img {
+    max-width: 150px; /* Tamaño del logo */
+    width: 100%;
+    height: auto;
+}
+
+/* Contenido en el centro */
+.content {
+    position: relative;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    max-width: 90%;
+    width: 600px;
+    animation: fadeIn 2s ease-in-out; /* Efecto de entrada */
+    z-index: 2;
+}
+
+/* Efecto de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Títulos y texto */
+.content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos del contador */
+#countdown {
+    font-size: 1.8rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#countdown span {
+    color: #FFD700; /* Dorado para el contador */
+}
+
+/* Estilos para dispositivos con un ancho máximo de 768px (como teléfonos y tabletas) */
+@media (max-width: 768px) {
+    .content {
+        padding: 15px 10px; /* Reducción de relleno para más espacio */
+        max-width: 90%;
+        width: 100%; /* Asegura que el contenido no quede fuera de la pantalla */
+        margin: 0 auto; /* Centra el contenido */
+    }
+
+    .content h1 {
+        font-size: 1.8rem; /* Ajusta el tamaño del título para pantallas pequeñas */
+    }
+
+    .content p {
+        font-size: 1rem; /* Un poco más pequeño para facilitar la lectura en móviles */
+    }
+
+    #countdown {
+        font-size: 1.4rem; /* Ajuste del tamaño del contador */
+        gap: 8px; /* Ajuste del espacio entre los elementos */
+    }
+
+    .logo img {
+        max-width: 120px; /* Ajuste del logo para pantallas pequeñas */
+    }
+}
